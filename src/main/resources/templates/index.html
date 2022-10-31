@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/index-style.css" th:ref="@{/css/index-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/index-style.css" th:href="@{/css/index-style.css}">
     <title th:text="#{title}">MediaMark Áruház</title>
 </head>
 
@@ -10,16 +10,15 @@
     <script>
         setTimeout(function() {
             window.location.href = "home";
-        }, 1000);
+        }, 1300);
     </script>
 
     <section>
         <div class="div-upper-logo1">
-            <img class="mediamark-logo1" src="../static/images/mediamark-logo_splash1.png" th:src="@{/images/mediamark-logo_splash1.png}">
+            <img class="mediamark-logo1" src="../static/images/mediamark-logo1.png" th:src="@{/images/mediamark-logo1.png}">
         </div>
-        <div class="div-separator"></div>
         <div class="div-upper-logo2">
-            <img class="mediamark-logo2" src="../static/images/mediamark-logo_splash2.png" th:src="@{/images/mediamark-logo_splash2.png}">
+            <img class="mediamark-logo2" src="../static/images/mediamark-logo2.png" th:src="@{/images/mediamark-logo2.png}">
         </div>
     </section>
 
