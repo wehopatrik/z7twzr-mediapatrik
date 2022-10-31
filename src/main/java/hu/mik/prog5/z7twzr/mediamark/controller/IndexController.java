@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
+    @GetMapping
+    public String getRoot() {
+        return "redirect:index";
+    }
+
     @GetMapping("index")
     public String getIndexPage() {
         return "index";
