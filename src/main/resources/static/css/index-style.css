@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mediamark-logo1 {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width: 80px;
+}
+
+.mediamark-logo2 {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width: 100px;
+}
+
+.div-upper-logo1 {
+    animation: splash1 1s;
+    opacity: 0;
+}
+
+.div-separator {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.div-upper-logo2 {
+    animation: splash2 1s;
+    opacity: 0;
+    z-index: -1;
+}
+
+@keyframes splash1 {
+    0% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateX(0px);
+        filter: blur(0px);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(50px);
+        filter: blur(4px);
+    }
+}
+
+@keyframes splash2 {
+    0% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateX(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50px);
+        filter: blur(4px);
+    }
+}
