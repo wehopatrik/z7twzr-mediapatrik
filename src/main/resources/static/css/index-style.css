@@ -13,24 +13,24 @@ section {
     align-items: center;
 }
 
-.mediamark-logo1 {
+.mediapatrik-logo1 {
     user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    /*width: 80px;*/
+    width: 300px;
 }
 
-.mediamark-logo2 {
+.mediapatrik-logo2 {
     user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    /*width: 100px;*/
+    width: 300px;
 }
 
 .div-upper-logo1 {
@@ -61,7 +61,7 @@ section {
 
     100% {
         opacity: 0;
-        transform: translateX(120px);
+        transform: translateX(50px);
         filter: blur(4px);
     }
 }
@@ -79,7 +79,7 @@ section {
 
     100% {
         opacity: 0;
-        transform: translateX(-120px);
+        transform: translateX(-50px);
         filter: blur(4px);
     }
 }

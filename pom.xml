@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>hu.mik.prog5.z7twzr</groupId>
-	<artifactId>mediamark</artifactId>
+	<artifactId>mediapatrik</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mediamark</name>
+	<name>mediapatrik</name>
 	<description>Spring project for submission</description>
 	<properties>
 		<java.version>17</java.version>

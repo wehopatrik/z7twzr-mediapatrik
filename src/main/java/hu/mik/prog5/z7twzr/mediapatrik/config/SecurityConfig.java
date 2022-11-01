@@ -1,4 +1,4 @@
-package hu.mik.prog5.z7twzr.mediamark.config;
+package hu.mik.prog5.z7twzr.mediapatrik.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
