@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{title}">MediaPatrik Áruház</title>
+</head>
+
+<body>
+
+  <div th:fragment="header" class="sticky-header">
+    <div class="header-logo">
+      <img class="mediapatrik-logo" src="../static/images/logo.png" th:src="@{/images/logo.png}"/>
+    </div>
+    <div class="header-menu">
+      <b><a href="/home" th:href="@{home}" class="a-home" th:text="#{header.home}">Főoldal</a></b>
+      <b><a href="/shop" th:href="@{shop}" class="a-shop" th:text="#{header.shop}">Termékek</a></b>
+      <div class="header-login-logout">
+        <b><a sec:authorize="isAnonymous()" href="/login" th:href="@{login}" class="a-login" th:text="#{header.login}">Bejelentkezés</a></b>
+        <b><a sec:authorize="isAuthenticated()" href="/myaccount" th:href="@{myaccount}" class="a-myaccount" th:text="#{header.myaccount}">Saját fiók</a></b>
+        <form action="post" th:action="@{logout}">
+          <button class="logout-button" th:text="#{header.logout}">Kijelentkezés</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
