@@ -15,19 +15,28 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private static final String[] AUTH_WHITELIST = { "/", "/index", "/home", "/product/**", "/css/**", "/js/**", "/images/**", "/favicon.ico**" };
+    private static final String[] AUTH_WHITELIST = { "/", "/index", "/home/**", "/shop/**", "/product/**", "/css/**", "/js/**", "/images/**", "/favicon.ico**" };
 
     @Bean
     public SecurityFilterChain formLoginFilterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests(authorize -> {
-            authorize.antMatchers(AUTH_WHITELIST).permitAll();
-            authorize.anyRequest().authenticated();
-        }).formLogin(form -> {
-            form.loginPage("/login");
-            form.defaultSuccessUrl("/home", true);
-            form.permitAll();
-        }).logout(LogoutConfigurer::permitAll);
+        //@formatter:off
+        http.authorizeRequests()
+            .antMatchers(AUTH_WHITELIST).permitAll()
+            .anyRequest().authenticated()
+            .and()
+            .formLogin()
+            .loginPage("/login")
+            .defaultSuccessUrl("/home", true)
+            .permitAll()
+            .and()
+            .logout()
+            .permitAll()
+            .deleteCookies("JSESSION")
+            .logoutSuccessUrl("/home")
+            .and()
+            .csrf().disable();
+        //@formatter:on
 
         return http.build();
     }
