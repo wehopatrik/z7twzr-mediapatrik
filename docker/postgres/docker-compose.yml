@@ -11,6 +11,7 @@ services:
       - '5432:5432'
     networks:
       - mediapatrik-network
+    container_name: mediapatrik-postgres
 
 networks:
   mediapatrik-network:

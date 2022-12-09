@@ -30,6 +30,13 @@ CREATE TABLE role
     role_name VARCHAR(100)
 );
 
+CREATE TABLE product_user
+(
+    id          SERIAL PRIMARY KEY,
+    user_id     SERIAL NOT NULL REFERENCES "user" (id),
+    product_id  SERIAL NOT NULL REFERENCES product (id)
+);
+
 CREATE TABLE user_role
 (
     id      SERIAL PRIMARY KEY,
