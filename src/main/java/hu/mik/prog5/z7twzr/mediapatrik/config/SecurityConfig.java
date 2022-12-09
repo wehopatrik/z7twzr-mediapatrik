@@ -42,25 +42,6 @@ public class SecurityConfig {
     }
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsServiceBean(PasswordEncoder passwordEncoder) {
-        //@formatter:off
-        return new InMemoryUserDetailsManager(
-                User.builder()
-                        .passwordEncoder(passwordEncoder::encode)
-                        .username("user")
-                        .password("password")
-                        .roles("USER")
-                        .build(),
-                User.builder()
-                        .passwordEncoder(passwordEncoder::encode)
-                        .username("admin")
-                        .password("password")
-                        .roles("USER", "ADMIN")
-                        .build());
-        //@formatter:on
-    }
-
-    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
