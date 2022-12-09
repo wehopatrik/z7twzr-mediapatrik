@@ -6,11 +6,22 @@
     <title th:text="#{title} + ' - ' + #{header.shop}">MediaPatrik Áruház</title>
     <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css"
           th:href="@{/css/basic-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/shop-style.css"
+          th:href="@{/css/shop-style.css}">
 </head>
 
 <body>
 
 <div th:replace="fragments/common :: header"></div>
+
+<div class="div-content">
+    <div class="div-product" th:each="product : ${products}">
+        <h3 id="product-name" th:text="${product.name}"></h3>
+        <img id="product-image" th:src="@{|/images/products/${product.productType}/${product.imageName}.jpg|}"/>
+        <h4 id="product-price" th:text="${product.price} + ' Ft'"></h4>
+        <input sec:authorize="isAuthenticated()" type="button" class="button" role="button" th:value="#{product.order}" onclick="orderProduct(this)">
+    </div>
+</div>
 
 </body>
 </html>
