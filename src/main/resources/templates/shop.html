@@ -16,9 +16,9 @@
 
 <div class="div-content">
     <div class="div-product" th:each="product : ${products}">
-        <h3 id="product-name" th:text="${product.name}"></h3>
+        <h2 id="product-name" th:text="${product.name}"></h2>
         <img id="product-image" th:src="@{|/images/products/${product.productType}/${product.imageName}.jpg|}"/>
-        <h4 id="product-price" th:text="${product.price} + ' Ft'"></h4>
+        <h3 id="product-price" th:text="${product.price} + ' Ft'"></h3>
         <input sec:authorize="isAuthenticated()" type="button" class="button" role="button" th:value="#{product.order}" onclick="orderProduct(this)">
     </div>
 </div>
