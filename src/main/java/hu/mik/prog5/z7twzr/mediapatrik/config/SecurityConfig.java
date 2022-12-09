@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private static final String[] AUTH_WHITELIST = { "/", "/index", "/home/**", "/shop/**", "/product/**", "/css/**", "/js/**", "/images/**", "/favicon.ico**" };
+    private static final String[] AUTH_WHITELIST = { "/", "/index", "/register/**", "/home/**", "/shop/**", "/product/**", "/css/**", "/js/**", "/images/**", "/favicon.ico**" };
 
     @Bean
     public SecurityFilterChain formLoginFilterChain(HttpSecurity http) throws Exception {
