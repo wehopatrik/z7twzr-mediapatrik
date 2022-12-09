@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{title} + ' - ' + #{header.admin}">MediaPatrik Áruház</title>
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css" th:href="@{/css/basic-style.css}">
+</head>
+
+<body>
+
+  <div th:replace="fragments/common :: header"></div>
+
+  <div class="div-content" sec:authorize="hasRole('ADMIN')">
+
+  </div>
+
+</body>
+</html>
