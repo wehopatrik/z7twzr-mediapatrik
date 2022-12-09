@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-  <title th:text="#{title}">MediaPatrik Áruház</title>
+  <title th:text="#{title} + ' - ' + #{header.login}">MediaPatrik Áruház</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" media="all" href="../static/css/login-style.css" th:href="@{/css/login-style.css}">
 </head>
