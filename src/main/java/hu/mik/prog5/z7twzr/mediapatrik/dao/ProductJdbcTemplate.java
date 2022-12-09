@@ -45,7 +45,7 @@ public class ProductJdbcTemplate implements ProductDao {
 
     @Override
     public List<Product> findAll() {
-        return this.jdbcTemplate.query("SELECT p.id, p.name, p.price. p.image_name, p.type FROM product p", this.productRowMapper);
+        return this.jdbcTemplate.query("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p", this.productRowMapper);
     }
 
     @Override
