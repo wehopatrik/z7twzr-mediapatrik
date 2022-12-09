@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="#{title} + ' - ' + #{header.home}">MediaPatrik Áruház</title>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css" th:href="@{/css/basic-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css"
+          th:href="@{/css/basic-style.css}">
 </head>
 
 <body>
 
-    <div th:replace="fragments/common :: header"></div>
+<div th:replace="fragments/common :: header"></div>
 
-    <div class="div-content">
-        <h2 th:text="#{mediapatrik.welcome}">Üdvözlünk a MediaPatrik webáruházban!</h2>
-        <h3 th:text="#{mediapatrik.welcome.infos}">Információk</h3>
-    </div>
+<div class="div-content">
+    <h2 th:text="#{mediapatrik.welcome}">Üdvözlünk a MediaPatrik webáruházban!</h2>
+    <h3 th:text="#{mediapatrik.welcome.infos}">Információk</h3>
+</div>
 
 </body>
 

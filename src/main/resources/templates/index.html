@@ -2,25 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/index-style.css" th:href="@{/css/index-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/index-style.css"
+          th:href="@{/css/index-style.css}">
     <title th:text="#{title}">MediaPatrik Áruház</title>
 </head>
 
 <body>
-    <script>
-        setTimeout(function() {
-            window.location.href = "home";
-        }, 1300);
-    </script>
+<script>
+    setTimeout(function () {
+        window.location.href = "home";
+    }, 1300);
+</script>
 
-    <section>
-        <div class="div-upper-logo1">
-            <img class="mediapatrik-logo1" src="../static/images/mediapatrik-logo1.png" th:src="@{/images/mediapatrik-logo1.png}">
-        </div>
-        <div class="div-upper-logo2">
-            <img class="mediapatrik-logo2" src="../static/images/mediapatrik-logo2.png" th:src="@{/images/mediapatrik-logo2.png}">
-        </div>
-    </section>
+<section>
+    <div class="div-upper-logo1">
+        <img class="mediapatrik-logo1" src="../static/images/mediapatrik-logo1.png"
+             th:src="@{/images/mediapatrik-logo1.png}">
+    </div>
+    <div class="div-upper-logo2">
+        <img class="mediapatrik-logo2" src="../static/images/mediapatrik-logo2.png"
+             th:src="@{/images/mediapatrik-logo2.png}">
+    </div>
+</section>
 
 </body>
 
