@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
     <meta charset="UTF-8">
     <title th:text="#{title}">MediaPatrik Áruház</title>
@@ -8,7 +9,7 @@
 
 <body>
 
-<div th:replace="fragments/common :: header"></div>
+    <div th:replace="fragments/common :: header"></div>
 
 </body>
 </html>
