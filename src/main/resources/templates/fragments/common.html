@@ -16,13 +16,11 @@
     <div class="header-menu">
         <b><a href="/home" th:href="@{home}" class="a-home" th:text="#{header.home}">Főoldal</a></b>
         <b><a href="/shop" th:href="@{shop}" class="a-shop" th:text="#{header.shop}">Termékek</a></b>
-        <b><a href="/admin" th:href="@{admin}" class="a-admin" th:text="#{header.admin}"
-              sec:authorize="hasRole('ADMIN')">Admin kezelőfelület</a></b>
+        <b><a href="/admin" th:href="@{admin}" class="a-admin" th:text="#{header.admin}" sec:authorize="hasAuthority('ADMIN')">Admin kezelőfelület</a></b>
     </div>
     <div class="header-login-logout">
         <b><a sec:authorize="isAnonymous()" href="/login" th:href="@{login}" class="a-login" th:text="#{header.login}">Bejelentkezés</a></b>
-        <b><a sec:authorize="isAuthenticated()" href="/my-account" th:href="@{my-account}" class="a-myaccount"
-              th:text="#{header.myaccount}">Saját fiók</a></b>
+        <b><a sec:authorize="isAuthenticated()" href="/my-account" th:href="@{my-account}" class="a-myaccount" th:text="#{header.myaccount}">Saját fiók</a></b>
         <form sec:authorize="isAuthenticated()" action="post" th:action="@{/logout}">
             <button sec:authorize="isAuthenticated()" class="logout-button" th:text="#{header.logout}">Kijelentkezés
             </button>
