@@ -11,7 +11,7 @@
 
   <div th:replace="fragments/common :: header"></div>
   <div class="div-content" sec:atuhorize="hasAuthority('ADMIN')">
-    <h3 th:text="#{header.admin}">Admin kezelőfelület</h3>
+    <h2 th:text="#{header.admin}">Admin kezelőfelület</h2>
     <div class="admin-list">
       <div>
 
