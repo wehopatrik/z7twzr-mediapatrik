@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #C7B1B8;
+    background-color: #E0E0E0;
 }
 
 a, a:link, a:visited, a:active {
@@ -20,7 +20,7 @@ a:hover {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: 100px;
-    box-shadow: 0px 10px 20px #A64C67;
+    box-shadow: 0px 10px 20px #C5C5C5;
     display: flex;
     margin-top: 20px;
     margin-left: 1%;
@@ -37,7 +37,7 @@ a:hover {
 }
 
 .sticky-header:hover {
-    box-shadow: 0px 12px 80px #A80E3C;
+    box-shadow: 0px 12px 20px #A64C67;
     transition: all 1500ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
@@ -121,7 +121,7 @@ a:hover {
 .div-content {
     border-radius: 30px;
     background: #FFFFFF;
-    box-shadow: 0px 11px 34px #A64C67;
+    box-shadow: 0px 11px 20px #C5C5C5;
     margin: 50px 50px;
     transition: all 1500ms cubic-bezier(.23, 1, 0.32, 1);
     animation: fadeIn 0.6s;
@@ -129,7 +129,7 @@ a:hover {
 }
 
 .div-content:hover {
-    box-shadow: 0px 12px 80px #A80E3C;
+    box-shadow: 0px 12px 20px #A64C67;
     transition: all 1500ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
