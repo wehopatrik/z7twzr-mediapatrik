@@ -21,8 +21,6 @@
     </div>
     <div class="header-login-logout">
         <b><a sec:authorize="isAnonymous()" href="/login" th:href="@{login}" class="a-login" th:text="#{header.login}">Bejelentkezés</a></b>
-        <b><a sec:authorize="isAnonymous()" href="/register" th:href="@{register}" class="a-login"
-              th:text="#{header.register}">Regisztráció</a></b>
         <b><a sec:authorize="isAuthenticated()" href="/my-account" th:href="@{my-account}" class="a-myaccount"
               th:text="#{header.myaccount}">Saját fiók</a></b>
         <form sec:authorize="isAuthenticated()" action="post" th:action="@{/logout}">

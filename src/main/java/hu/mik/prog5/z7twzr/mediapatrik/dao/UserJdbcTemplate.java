@@ -28,18 +28,4 @@ public class UserJdbcTemplate implements UserDao {
                 this.userRowMapper, username);
     }
 
-    @Override
-    public User create(User user) {
-        KeyHolder keyHolder = new GeneratedKeyHolder();
-        this.jdbcTemplate.update(connection -> {
-            PreparedStatementCreatorFactory psFactory = new PreparedStatementCreatorFactory(
-                    "INSERT INTO \"user\" (username, password) VALUES (?, ?)", Types.VARCHAR, Types.VARCHAR);
-            psFactory.setReturnGeneratedKeys(true);
-            PreparedStatementCreator ps = psFactory.newPreparedStatementCreator(
-                    List.of(user.getUsername(), user.getPassword()));
-            return ps.createPreparedStatement(connection);
-            }, keyHolder);
-        return this.findByUsername(user.getUsername());
-    }
-
 }
