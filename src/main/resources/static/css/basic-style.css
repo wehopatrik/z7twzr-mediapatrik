@@ -37,7 +37,7 @@ a:hover {
 }
 
 .sticky-header:hover {
-    box-shadow: 0px 11px 24px #A80E3C;
+    box-shadow: 0px 12px 80px #A80E3C;
     transition: all 1500ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
@@ -129,7 +129,7 @@ a:hover {
 }
 
 .div-content:hover {
-    box-shadow: 0px 11px 34px #A80E3C;
+    box-shadow: 0px 12px 80px #A80E3C;
     transition: all 1500ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
