@@ -6,50 +6,51 @@
   <link rel="stylesheet" type="text/css" media="all" href="../static/css/login-style.css" th:href="@{/css/login-style.css}">
 </head>
 <body>
-  <div class="div-upper-logo">
-    <img class="mediapatrik-logo" src="../static/images/logo.png" th:src="@{/images/logo.png}"/>
-  </div>
-
-  <div class="div-title">
-    <h2 th:text="#{title}">MediaPatrik Áruház</h2>
-  </div>
-
-  <div class="div-message">
-    <h4 th:text="#{login.message}">Kérjük jelentkezzen be:</h4>
-  </div>
-
-  <div class="div-center">
-    <div th:if="${param.error}">
-      <p class="p-error-message" th:text="#{login.error}">Hibás felhasználónév vagy jelszó.</p>
+  <div class="div-login">
+    <div class="div-upper-logo">
+      <img class="mediapatrik-logo" src="../static/images/logo.png" th:src="@{/images/logo.png}"/>
     </div>
-    <div th:if="${param.logout}">
-      <img class="info-icon" src="../static/images/info-icon.png" th:src="@{/images/info-icon-png}"/>
-      <p class="p-logout-message" th:text="#{login.logout}">Ön ki lett jelentkeztetve.</p>
-    </div>
-    <form method="post" th:action="@{/login}">
-      <div class="div-first-row">
-        <div>
-          <b><label class="username-label" for="username" th:text="#{login.username}">Felhasználónév:</label></b>
-        </div>
-        <div>
-          <input class="username-input" id="username" type="text" name="username">
-        </div>
-      </div>
-      <div class="div-second-row">
-        <div>
-          <b><label class="password-label" for="password" th:text="#{login.password}">Jelszó:</label></b>
-        </div>
-        <div>
-          <input class="password-input" id="password" type="password" name="password">
-        </div>
-      </div>
-      <div class="div-third-row">
-        <div>
-          <input type="submit" class="button" role="button" th:value="#{login.submit}" value="Bejelentkezés">
-        </div>
-      </div>
-    </form>
-  </div>
 
+    <div class="div-title">
+      <h2 th:text="#{title}">MediaPatrik Áruház</h2>
+    </div>
+
+    <div class="div-message">
+      <h4 th:text="#{login.message}">Kérjük jelentkezzen be:</h4>
+    </div>
+
+    <div class="div-center">
+      <div th:if="${param.error}">
+        <p class="p-error-message" th:text="#{login.error}">Hibás felhasználónév vagy jelszó.</p>
+      </div>
+      <div th:if="${param.logout}">
+        <img class="info-icon" src="../static/images/info-icon.png" th:src="@{/images/info-icon-png}"/>
+        <p class="p-logout-message" th:text="#{login.logout}">Ön ki lett jelentkeztetve.</p>
+      </div>
+      <form method="post" th:action="@{/login}">
+        <div class="div-first-row">
+          <div>
+            <b><label class="username-label" for="username" th:text="#{login.username}">Felhasználónév:</label></b>
+          </div>
+          <div>
+            <input class="username-input" id="username" type="text" name="username">
+          </div>
+        </div>
+        <div class="div-second-row">
+          <div>
+            <b><label class="password-label" for="password" th:text="#{login.password}">Jelszó:</label></b>
+          </div>
+          <div>
+            <input class="password-input" id="password" type="password" name="password">
+          </div>
+        </div>
+        <div class="div-third-row">
+          <div>
+            <input type="submit" class="button" role="button" th:value="#{login.submit}" value="Bejelentkezés">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
