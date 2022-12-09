@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MyAccountController {
 
     @GetMapping("my-account")
-    public String getHomePage() {
+    public String getMyAccountPage() {
         return "myaccount";
     }
 
