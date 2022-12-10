@@ -1,3 +1,7 @@
+// Metódus az oldal betöltésekor fusson le
+window.onload = pageLoad();
+
+// toastr beállítása
 function pageLoad() {
     toastr.options = {
         "closeButton": true,
@@ -18,6 +22,7 @@ function pageLoad() {
     };
 }
 
+// Termék rendelése AJAX metódussal
 function orderProduct(element) {
     const url = window.location;
 
