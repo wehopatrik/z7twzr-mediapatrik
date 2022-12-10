@@ -28,7 +28,7 @@ public class ProductJdbcTemplate implements ProductDao {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.jdbcTemplate.update(connection -> {
             PreparedStatementCreatorFactory psFactory = new PreparedStatementCreatorFactory(
-                    "INSERT INTO product (name, price, image_name, type)", Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Types.VARCHAR);
+                    "INSERT INTO product (name, price, image_name, type) VALUES (?, ?, ?, ?)", Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Types.VARCHAR);
             psFactory.setReturnGeneratedKeys(true);
             PreparedStatementCreator ps = psFactory.newPreparedStatementCreator(
                     List.of(object.getName(), object.getPrice(), object.getImageName(), object.getProductType().toString()));
@@ -64,6 +64,26 @@ public class ProductJdbcTemplate implements ProductDao {
     public List<Product> findByType(ProductType type) {
         return this.jdbcTemplate.query("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p WHERE p.type = ?",
                 this.productRowMapper, type);
+    }
+
+    @Override
+    public boolean order(Long productId, Long userId) {
+        //return this.jdbcTemplate.update("INSERT INTO product_user (user_id, product_id) VALUES (?, ?)",
+        //        Long.toString(userId), Long.toString(productId)) == 1;
+        return this.jdbcTemplate.update(connection -> {
+            PreparedStatementCreatorFactory psFactory = new PreparedStatementCreatorFactory(
+                    "INSERT INTO product_user (user_id, product_id) VALUES (?, ?)", Types.INTEGER, Types.INTEGER);
+            psFactory.setReturnGeneratedKeys(true);
+            PreparedStatementCreator ps = psFactory.newPreparedStatementCreator(
+                    List.of(Long.toString(userId), Long.toString(productId)));
+            return ps.createPreparedStatement(connection);
+        }) == 1;
+    }
+
+    @Override
+    public List<Product> findAllOrders(Long userId) {
+        return this.jdbcTemplate.query("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p JOIN product_user pu ON p.id = pu.product_id WHERE pu.user_id = ?",
+                this.productRowMapper, userId);
     }
 
 }
