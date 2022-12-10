@@ -33,8 +33,8 @@ CREATE TABLE role
 CREATE TABLE product_user
 (
     id          SERIAL PRIMARY KEY,
-    user_id     SERIAL NOT NULL REFERENCES "user" (id),
-    product_id  SERIAL NOT NULL REFERENCES product (id)
+    user_id     INTEGER NOT NULL,
+    product_id  INTEGER NOT NULL
 );
 
 CREATE TABLE user_role
