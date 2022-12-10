@@ -25,8 +25,12 @@ public class ProductService {
         return this.productDao.order(productId, userId);
     }
 
-    public List<Product> findAllOrders(Long userId) {
-        return this.productDao.findAllOrders(userId);
+    public List<Product> findAllOrders() {
+        return this.productDao.findAllOrders();
+    }
+
+    public List<Product> findAllOrdersByUser(Long userId) {
+        return this.productDao.findAllOrdersByUser(userId);
     }
 
 }
