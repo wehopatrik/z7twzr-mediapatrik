@@ -21,7 +21,7 @@ public class MyAccountController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userService.findByUsername(username);
 
-        model.addAttribute("orderedProducts", productService.findAllOrders(user.getId()));
+        model.addAttribute("orderedProducts", productService.findAllOrdersByUser(user.getId()));
         return "myaccount";
     }
 
