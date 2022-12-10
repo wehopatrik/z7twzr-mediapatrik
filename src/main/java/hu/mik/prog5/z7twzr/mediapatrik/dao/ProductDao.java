@@ -9,4 +9,8 @@ public interface ProductDao extends CrudDao<Product, Long> {
 
     List<Product> findByType(ProductType type);
 
+    boolean order(Long productId, Long userId);
+
+    List<Product> findAllOrders(Long userId);
+
 }
