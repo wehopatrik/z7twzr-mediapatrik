@@ -17,4 +17,8 @@ public class ProductService {
         return this.productDao.findAll();
     }
 
+    public Product findById(Long id) {
+        return this.productDao.findById(id);
+    }
+
 }
