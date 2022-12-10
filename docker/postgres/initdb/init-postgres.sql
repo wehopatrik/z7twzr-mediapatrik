@@ -46,6 +46,8 @@ CREATE TABLE user_role
 
 INSERT INTO "user" (username, password) VALUES ('admin', '$2a$12$ceJaZ2NVdYgAfCySr55xTu5y1SWpovxAIwLv3AlLvuwxemCb1Uple');
 INSERT INTO "user" (username, password) VALUES ('user', '$2a$12$ceJaZ2NVdYgAfCySr55xTu5y1SWpovxAIwLv3AlLvuwxemCb1Uple');
+INSERT INTO "user" (username, password) VALUES ('user2', '$2a$12$ceJaZ2NVdYgAfCySr55xTu5y1SWpovxAIwLv3AlLvuwxemCb1Uple');
+INSERT INTO "user" (username, password) VALUES ('user3', '$2a$12$ceJaZ2NVdYgAfCySr55xTu5y1SWpovxAIwLv3AlLvuwxemCb1Uple');
 
 INSERT INTO role (role_name) VALUES ('USER');
 INSERT INTO role (role_name) VALUES ('ADMIN');
@@ -57,3 +59,5 @@ INSERT INTO product (name, image_name, price, type) VALUES ('Macbook Pro M2', 'm
 INSERT INTO user_role (user_id, role_id) SELECT * FROM (SELECT u.id FROM "user" u WHERE u.username = 'admin') a, (SELECT r.id FROM "role" r WHERE r.role_name = 'ADMIN') b;
 INSERT INTO user_role (user_id, role_id) SELECT * FROM (SELECT u.id FROM "user" u WHERE u.username = 'admin') a, (SELECT r.id FROM "role" r WHERE r.role_name = 'USER') b;
 INSERT INTO user_role (user_id, role_id) SELECT * FROM (SELECT u.id FROM "user" u WHERE u.username = 'user') a, (SELECT r.id FROM "role" r WHERE r.role_name = 'USER') b;
+INSERT INTO user_role (user_id, role_id) SELECT * FROM (SELECT u.id FROM "user" u WHERE u.username = 'user2') a, (SELECT r.id FROM "role" r WHERE r.role_name = 'USER') b;
+INSERT INTO user_role (user_id, role_id) SELECT * FROM (SELECT u.id FROM "user" u WHERE u.username = 'user3') a, (SELECT r.id FROM "role" r WHERE r.role_name = 'USER') b;
