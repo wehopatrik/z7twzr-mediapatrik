@@ -81,7 +81,13 @@ public class ProductJdbcTemplate implements ProductDao {
     }
 
     @Override
-    public List<Product> findAllOrders(Long userId) {
+    public List<Product> findAllOrders() {
+        return this.jdbcTemplate.query("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p JOIN product_user pu ON p.id = pu.product_id",
+                this.productRowMapper);
+    }
+
+    @Override
+    public List<Product> findAllOrdersByUser(Long userId) {
         return this.jdbcTemplate.query("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p JOIN product_user pu ON p.id = pu.product_id WHERE pu.user_id = ?",
                 this.productRowMapper, userId);
     }
