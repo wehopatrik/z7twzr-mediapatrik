@@ -28,8 +28,8 @@ public class ShopController {
     @ResponseBody
     public String shop(@RequestBody Product product, Model model) {
         try {
-            productService.findById(product.getId());
-            log.info("PRODUCT ORDERED: " + product.toString());
+            Product foundProductInDb = productService.findById(product.getId());
+            log.info("PRODUCT ORDERED: " + foundProductInDb.toString());
             return "Done";
         } catch(Exception e) {
             log.error("ERROR HAPPENED WHEN ORDERING PRODUCT: " + product.toString() + " | ERROR: " + e);
