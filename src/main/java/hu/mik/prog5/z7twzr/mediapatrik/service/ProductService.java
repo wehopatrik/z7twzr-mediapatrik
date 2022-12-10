@@ -21,4 +21,12 @@ public class ProductService {
         return this.productDao.findById(id);
     }
 
+    public boolean order(Long productId, Long userId) {
+        return this.productDao.order(productId, userId);
+    }
+
+    public List<Product> findAllOrders(Long userId) {
+        return this.productDao.findAllOrders(userId);
+    }
+
 }
