@@ -2,22 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-  <meta charset="UTF-8">
-  <title th:text="#{title} + ' - ' + #{header.admin}">MediaPatrik Áruház</title>
-  <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css" th:href="@{/css/basic-style.css}">
+    <meta charset="UTF-8">
+    <title th:text="#{title} + ' - ' + #{header.admin}">MediaPatrik Áruház</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css"
+          th:href="@{/css/basic-style.css}">
 </head>
 
 <body>
 
-  <div th:replace="fragments/common :: header"></div>
-  <div class="div-content" sec:atuhorize="hasAuthority('ADMIN')">
+<div th:replace="fragments/common :: header"></div>
+<div class="div-content" sec:atuhorize="hasAuthority('ADMIN')">
     <h2 th:text="#{header.admin}">Admin kezelőfelület</h2>
     <div class="admin-list">
-      <div>
-
-      </div>
+        <div>
+            <h4 th:text="#{admin.orders}"></h4>
+            <ol>
+                <th:block th:each="product : ${orderedProducts}">
+                    <li th:text="#{product.name} + ': ' + ${product.name} + ' - ' + #{product.price} + ': ' + ${product.price} + ' - ' + #{product.type} + ': ' + ${product.productType}"></li>
+                </th:block>
+            </ol>
+        </div>
     </div>
-  </div>
+</div>
 
 
 </body>
