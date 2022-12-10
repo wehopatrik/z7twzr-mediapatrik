@@ -39,7 +39,7 @@ public class ProductJdbcTemplate implements ProductDao {
 
     @Override
     public Product findById(Long id) {
-        return this.jdbcTemplate.queryForObject("SELECT p.id, p.name, p.price. p.image_name, p.type FROM product p WHERE p.id = ?",
+        return this.jdbcTemplate.queryForObject("SELECT p.id, p.name, p.price, p.image_name, p.type FROM product p WHERE p.id = ?",
                 this.productRowMapper, id);
     }
 
