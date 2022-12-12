@@ -8,7 +8,9 @@
 </head>
 <body>
 <div th:replace="fragments/common :: header"></div>
-<h1 th:text="#{error.forbidden}">403</h1>
-<h2 th:text="#{error.forbidden.message}">A kért tartalomhoz nincs hozzáférési jogosultsága!</h2>
+<div class="error-message">
+  <h1 th:text="#{error.forbidden}">403</h1>
+  <h2 th:text="#{error.forbidden.message}">A kért tartalomhoz nincs hozzáférési jogosultsága!</h2>
+</div>
 </body>
 </html>

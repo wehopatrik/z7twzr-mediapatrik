@@ -8,7 +8,9 @@
 </head>
 <body>
 <div th:replace="fragments/common :: header"></div>
-<h1 th:text="#{error.unauthorized}">401</h1>
-<h2 th:text="#{error.unauthorized.message}">A kérelem hitelesítést igényel!</h2>
+<div class="error-message">
+    <h1 th:text="#{error.unauthorized}">401</h1>
+    <h2 th:text="#{error.unauthorized.message}">A kérelem hitelesítést igényel!</h2>
+</div>
 </body>
 </html>

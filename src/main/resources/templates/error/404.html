@@ -8,7 +8,9 @@
 </head>
 <body>
 <div th:replace="fragments/common :: header"></div>
-<h1 th:text="#{error.notfound}">404</h1>
-<h2 th:text="#{error.notfound.message}">A kért tartalom nem található!</h2>
+<div  class="error-message">
+  <h1 th:text="#{error.notfound}">404</h1>
+  <h2 th:text="#{error.notfound.message}">A kért tartalom nem található!</h2>
+</div>
 </body>
 </html>
