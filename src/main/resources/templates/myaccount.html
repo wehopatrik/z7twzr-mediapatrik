@@ -14,12 +14,13 @@
 
 <div class="div-content" sec:authorize="hasAuthority('USER')">
     <h2 th:text="#{header.myaccount}"></h2>
-    <h4 th:text="#{myaccount.orders}">Rendeléseim:</h4>
+    <h3 th:text="#{myaccount.orders}">Rendeléseim:</h3>
     <ol>
         <th:block th:each="product : ${orderedProducts}">
-            <li th:text="#{product.name} + ': ' + ${product.name} + ' - ' + #{product.price} + ': ' + ${product.price} + ' - ' + #{product.type} + ': ' + ${product.productType}"></li>
+            <li th:text="#{product.name} + ': ' + ${product.name} + ' - ' + #{product.price} + ': ' + ${#numbers.formatInteger(product.price, 0, 'POINT')} + ' Ft - ' + #{product.type} + ': ' + ${product.productType}"></li>
         </th:block>
     </ol>
+    <h4 th:text="'Összesen: ' + ${#numbers.formatInteger(countedPrice, 0, 'POINT')} + ' Ft'"></h4>
 </div>
 
 </body>
