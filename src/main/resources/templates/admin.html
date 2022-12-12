@@ -6,24 +6,25 @@
     <title th:text="#{title} + ' - ' + #{header.admin}">MediaPatrik Áruház</title>
     <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css"
           th:href="@{/css/basic-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/admin-style.css"
+          th:href="@{/css/admin-style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/toastr.min.css"
+          th:href="@{/css/toastr.min.css}">
+    <script type="text/javascript" src="../static/js/jquery-3.6.1.min.js" th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script type="text/javascript" src="../static/js/toastr.min.js" th:src="@{/js/toastr.min.js}"></script>
+    <script type="text/javascript" src="../static/js/admin.js" th:src="@{/js/admin.js}"></script>
 </head>
 
 <body>
 
 <div th:replace="fragments/common :: header"></div>
-<div class="div-content" sec:atuhorize="hasAuthority('ADMIN')">
-    <h2 th:text="#{header.admin}">Admin kezelőfelület</h2>
-    <div class="admin-list">
-        <div>
-            <h3 th:text="#{admin.orders}"></h3>
-            <ol>
-                <th:block th:each="product : ${orderedProducts}">
-                    <li th:text="#{product.name} + ': ' + ${product.name} + ' - ' + #{product.price} + ': ' + ${#numbers.formatInteger(product.price, 0, 'POINT')} + ' Ft - ' + #{product.type} + ': ' + ${product.productType}"></li>
-                </th:block>
-            </ol>
-            <h4 th:text="'Bevétel: ' + ${#numbers.formatInteger(countedPrice, 0, 'POINT')} + ' Ft'"></h4>
-        </div>
-    </div>
+
+<div class="div-admin-buttons" sec:atuhorize="hasAuthority('ADMIN')">
+    <input type="button" id="list-orders-button" class="button" role="button" th:value="#{admin.list.orders}" onclick="loadOrderListContent()"/>
+    <input type="button" id="list-products-button" class="button" role="button" th:value="#{admin.list.products}" onclick="loadProductListContent()"/>
+</div>
+<div class="div-content" id="div-content" sec:atuhorize="hasAuthority('ADMIN')">
+    <h3 th:text="#{admin.choose}"></h3>
 </div>
 
 
