@@ -7,7 +7,8 @@
     <title th:text="#{title}">MediaPatrik Áruház</title>
 </head>
 <body>
-<h1 th:text="#{error.401}">401</h1>
-<h2 th:text="#{error.401.message}">A kérelem hitelesítést igényel!</h2>
+<div th:replace="fragments/common :: header"></div>
+<h1 th:text="#{error.unauthorized}">401</h1>
+<h2 th:text="#{error.unauthorized.message}">A kérelem hitelesítést igényel!</h2>
 </body>
 </html>

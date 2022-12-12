@@ -7,7 +7,8 @@
   <title th:text="#{title}">MediaPatrik Áruház</title>
 </head>
 <body>
-<h1 th:text="#{error.403}">403</h1>
-<h2 th:text="#{error.403.message}">A kért tartalomhoz nincs hozzáférési jogosultsága!</h2>
+<div th:replace="fragments/common :: header"></div>
+<h1 th:text="#{error.forbidden}">403</h1>
+<h2 th:text="#{error.forbidden.message}">A kért tartalomhoz nincs hozzáférési jogosultsága!</h2>
 </body>
 </html>
