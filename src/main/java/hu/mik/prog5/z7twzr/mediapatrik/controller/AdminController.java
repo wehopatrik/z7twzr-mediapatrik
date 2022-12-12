@@ -17,6 +17,11 @@ public class AdminController {
 
     @GetMapping("admin")
     public String getAdminPage(Model model) {
+        return "admin";
+    }
+
+    @GetMapping("admin/order-list")
+    public String getOrderList(Model model) {
         List<Product> orderedProducts = productService.findAllOrders();
 
         int countedPrice = 0;
@@ -26,7 +31,13 @@ public class AdminController {
 
         model.addAttribute("orderedProducts", orderedProducts);
         model.addAttribute("countedPrice", countedPrice);
-        return "admin";
+        return "contents/admin-contents/list-orders";
+    }
+
+    @GetMapping("admin/product-list")
+    public String getProductList(Model model) {
+        model.addAttribute("products", productService.findAll());
+        return "contents/admin-contents/list-products";
     }
 
 }
