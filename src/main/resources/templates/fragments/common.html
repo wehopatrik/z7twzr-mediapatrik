@@ -11,7 +11,7 @@
 
 <div th:fragment="header" class="sticky-header">
     <div class="header-logo">
-        <img class="mediapatrik-logo" src="../static/images/logo.png" th:src="@{/images/logo.png}"/>
+        <a href="/index" th:href="@{index}"><img class="mediapatrik-logo" src="../static/images/logo.png" th:src="@{/images/logo.png}"/></a>
     </div>
     <div class="header-menu">
         <b><a href="/home" th:href="@{home}" class="a-home" th:text="#{header.home}">Főoldal</a></b>
