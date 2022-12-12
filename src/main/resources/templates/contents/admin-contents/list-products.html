@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{title} + ' - ' + #{header.admin}">MediaPatrik Áruház</title>
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/basic-style.css"
+        th:href="@{/css/basic-style.css}">
+</head>
+
+<h2 th:text="#{header.admin}">Admin kezelőfelület</h2>
+<div class="admin-list">
+  <div>
+    <h3 th:text="#{admin.products}"></h3>
+    <ol>
+      <th:block th:each="product : ${products}">
+        <li th:text="#{product.name} + ': ' + ${product.name} + ' - ' + #{product.price} + ': ' + ${#numbers.formatInteger(product.price, 0, 'POINT')} + ' Ft - ' + #{product.type} + ': ' + ${product.productType}"></li>
+      </th:block>
+    </ol>
+  </div>
+</div>
